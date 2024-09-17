@@ -40,6 +40,14 @@ def wordcounter(sentences):
 
 
 def word_list(sentences):
+    """_summary_
+
+    Args:
+        sentences (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     all_words = []
     for row in sentences:
         word_list=row.split()
@@ -47,12 +55,11 @@ def word_list(sentences):
             if word == "-":
                 continue
             else:
-                while word[-1].isalpha() == False:
-                    word = word[:-1]
-                all_words.append(word.lower())
+                while not word[-1].isalpha(): #While the last character is not a letter
+                    word = word[:-1] #The last character is removed
+                all_words.append(word.lower()) #The word is added to the list of all words in all lower case
                 
     return all_words
-
 
 def get_average_wordlength(all_words):
     counter = 0
@@ -94,7 +101,7 @@ def main():
     average_wordlength = get_average_wordlength(all_words)
     #print(round(average_wordlength,3))
     winner = most_frequent_word(all_words)
-    print(winner)
+    #print(winner)
 
 
 
