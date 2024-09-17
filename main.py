@@ -23,8 +23,16 @@ def read_from_file(path: str):
     with open(path, "r" ,encoding="utf-8") as f:
         return f.readlines()
 
-#Räknar antal ord i inputen "sentences"
+#Counts number of words in "sentences"
 def wordcounter(sentences):
+    """_summary_
+
+    Args:
+        sentences (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     counter = 0
     all_words = []
     for row in sentences:
@@ -62,6 +70,11 @@ def word_list(sentences):
     return all_words
 
 def get_average_wordlength(all_words):
+    """_summary_
+
+    Args:
+        all_words (_type_): _description_
+    """
     counter = 0
     for word in all_words:
         word_length = len(word)
@@ -70,7 +83,12 @@ def get_average_wordlength(all_words):
     return(average_wordlength)
 
 
-def most_frequent_word(all_words):   
+def most_frequent_word(all_words): 
+    """_summary_
+
+    Args:
+        all_words (_type_): _description_
+    """
     winner_word = ""
     winner_counter = 0
     for word in all_words:
@@ -91,6 +109,7 @@ def most_frequent_word(all_words):
 
 
 def main():
+
     
     sentences = read_from_file("en_resa_genom_svenska_skogen.txt") # Här har du nu en lista av strängar från den inlästa filen.
     #print(sentences)
